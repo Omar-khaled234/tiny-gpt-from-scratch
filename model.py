@@ -294,8 +294,14 @@ def read_text_file(text_blob):
         raise TypeError(f"input must be string , got{type(text_blob).__name__}")
     return text_blob
 
-# Step 35 - encode_corpus_to_int_array (not yet solved)
-# TODO: implement
+# Step 35 - encode_corpus_to_int_array
+def encode_corpus_to_int_array(text, stoi):
+    """Convert the corpus string into a 1D NumPy int64 array of token ids."""
+    # TODO: map every character in text through stoi and return as a 1D int64 array
+    listi = []
+    for st in text : 
+        listi.append(stoi[st])
+    return np.array(listi , dtype=np.int64)
 
 # Step 36 - pick_split_point (not yet solved)
 # TODO: implement
