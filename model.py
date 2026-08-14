@@ -263,8 +263,15 @@ def softmax_overflow_demo(large_value):
         overFlow= False
     return {'naive_exp': ov_fl , 'overflowed': overFlow}
 
-# Step 32 - stable_softmax_1d (not yet solved)
-# TODO: implement
+# Step 32 - stable_softmax_1d
+import numpy as np
+
+def stable_softmax_1d(logits):
+    """Numerically stable softmax over a 1D logits vector."""
+    # TODO: subtract the max before exponentiating, then normalize.
+    max_val = max_along_axis(logits , 0)
+    arr_exp = array_exp((logits - max_val))
+    return arr_exp / sum_all(arr_exp)
 
 # Step 33 - stable_softmax_2d_rowwise (not yet solved)
 # TODO: implement
